@@ -3,15 +3,15 @@ package com.github.EduardKol.EduardKolSpringBootBelkaGD.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+
 
 @Controller
 public class MainController {
 
-	@GetMapping("/greeting")
-	public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
-		model.addAttribute("name", name);
-		return "greeting";
+	@GetMapping("/") //вызов при переходе на главную страницу
+	public String home(Model model) {
+		model.addAttribute("title", "Главная страница сайта");
+		return "home";
 	}
 
 }
